@@ -16,6 +16,8 @@ type
     edtPort: TEdit;
     IdSNTP1: TIdSNTP;
     Memo1: TMemo;
+    labHost: TLabel;
+    labPort: TLabel;
     procedure btnCheckNTPClick(Sender: TObject);
     procedure IdSNTP1Connected(Sender: TObject);
     procedure IdSNTP1Disconnected(Sender: TObject);
@@ -46,8 +48,9 @@ begin
     IdSNTP1.Host := edtHost.Text;
     IdSNTP1.Port := StrToInt(edtPort.Text);
     IdSNTP1.ReceiveTimeout := 5 * 1000; // 取不到  IdSNTP1.DateTime 時會卡住
+    Memo1.Lines.Add('請等侯 5秒鐘');
 
-    Memo1.Lines.Add('BoundIP:' + IdSNTP1.BoundIP);
+    //Memo1.Lines.Add('BoundIP:' + IdSNTP1.BoundIP);
 
     IdSNTP1.Active := true;
     IdSNTP1.Connect;
@@ -71,7 +74,7 @@ var
 begin
   Memo1.Lines.Add('IdSNTP1Connected');
 
-  str := 'Get Now:' + #10;
+  str := '有取得正確的日期時間，才算成功' + #10;
   str := str + DateTimeToStr(IdSNTP1.DateTime);
   ShowMessage(str);
 end;

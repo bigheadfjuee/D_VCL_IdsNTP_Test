@@ -14,9 +14,23 @@ object Form1: TForm1
   OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
+  object labHost: TLabel
+    Left = 8
+    Top = 8
+    Width = 22
+    Height = 13
+    Caption = 'Host'
+  end
+  object labPort: TLabel
+    Left = 8
+    Top = 54
+    Width = 20
+    Height = 13
+    Caption = 'Port'
+  end
   object btnCheckNTP: TButton
     Left = 8
-    Top = 88
+    Top = 131
     Width = 113
     Height = 25
     Caption = 'Check NTP'
@@ -25,7 +39,7 @@ object Form1: TForm1
   end
   object edtHost: TEdit
     Left = 8
-    Top = 8
+    Top = 27
     Width = 121
     Height = 21
     TabOrder = 1
@@ -33,7 +47,7 @@ object Form1: TForm1
   end
   object edtPort: TEdit
     Left = 8
-    Top = 48
+    Top = 73
     Width = 121
     Height = 21
     TabOrder = 2
